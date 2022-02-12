@@ -1,0 +1,50 @@
+# project 1  game
+
+
+import random
+
+def gamewin(comp,you):
+    if comp == you :      # if both are equal then tie
+        return None
+    elif comp == 's':     # check for all possibilities when computer chose 's'
+        if you == 'w':
+            return False
+        elif you == 'g':
+            return True  
+    elif comp =='w':      # check for all possiblity when computer choose 'w'
+        if you == 'g':
+            return False
+        elif you == 's':
+            return True
+    elif comp == 'g':     # check for all possiblity when computer chose 'g'
+        if you == 'w':
+            return True
+        else:
+            return False                      
+print("computer turn : snake(s) water(w) or gun(g)")
+
+randNo = random.randint(1,3)
+
+if randNo == 1:
+    comp ='s'
+elif randNo == 2:
+    comp = 'w'
+elif randNo ==3:
+    comp = 'g'   
+    
+print("computer turn complete now your turn chose your options")
+you = input("your turn : snake(s) water(w) or gun(g) ?- ")
+
+a = gamewin(comp,you)
+
+print(f"computer choose- {comp} ")
+print(f"you chose- {you}")
+
+if a == None:
+    print("the game is tie!")
+elif a :
+    print("you win") 
+else:
+    print("you lose!")    
+
+# thanks!
